@@ -72,3 +72,22 @@ h1 {
   width: 100%;
   padding: 10px;
 }
+.admin-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #f9b536;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.admin-panel {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #2f343b;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
