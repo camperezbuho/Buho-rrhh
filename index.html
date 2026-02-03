@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buho RRHH</title>
 
-  
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,44 +16,25 @@
     <button id="clockButton" class="main-button">
       ENTRADA
     </button>
-<p id="adminAccess" class="admin-link">
-  Modo administrador
-</p>
-
-<div id="adminPanel" class="admin-panel hidden">
-  <h2>Panel administrador</h2>
-
-  <button id="exportExcel">Exportar historial (.xlsx)</button>
-  <button id="exportCSV">Exportar para Google Sheets</button>
-
-  <div id="history"></div>
-</div>
 
     <div class="log">
       <p id="status">Aún no fichaste hoy</p>
     </div>
+
+    <!-- Acceso admin (UNO SOLO) -->
+    <p id="adminAccess" class="admin-link">Modo administrador</p>
+
+    <!-- Panel admin (UNO SOLO) -->
+    <div id="adminPanel" class="admin-panel hidden">
+      <h2>Panel administrador</h2>
+
+      <button id="exportExcel">Exportar historial (.xlsx)</button>
+      <button id="exportCSV">Exportar para Google Sheets</button>
+
+      <div id="history"></div>
+    </div>
   </div>
 
- <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
-
- <!-- Botón oculto de admin -->
-<p class="admin-link" id="adminAccess">Modo administrador</p>
-
-<!-- Panel admin -->
-<div id="adminPanel" class="admin-panel hidden">
-  <h2>Panel administrador</h2>
-
-  <button id="exportExcel">Exportar historial (.xlsx)</button>
-  <button id="exportCSV">Exportar para Google Sheets</button>
-
-  <div id="history"></div>
-</div>
-
-
-
-
-
-
-
