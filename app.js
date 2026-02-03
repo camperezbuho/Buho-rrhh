@@ -6,8 +6,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminAccess = document.getElementById("adminAccess");
   const adminPanel = document.getElementById("adminPanel");
   const historyDiv = document.getElementById("history");
+exportCSVBtn.addEventListener("click", () => {
+  let csv = "Usuario,Cargo,Tipo,Fecha,Hora\n";
 
-  const exportExcelBtn = document.getElementById("exportExcel");
+  logs.forEach(log => {
+    csv += `${log.user},${log.role},${log.type},${log.date},${log.time}\n`;
+  });
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "historial_fichaje.csv";
+  a.click();
+
+  URL.revokeObjectURL(url);
+});
+
   const exportCSVBtn = document.getElementById("exportCSV");
 
   const ADMIN_PASSWORD = "buhoadmin";
@@ -87,3 +103,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
