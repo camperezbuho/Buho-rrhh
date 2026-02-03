@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const button = document.getElementById("clockButton");
 const status = document.getElementById("status");
 
@@ -107,3 +108,5 @@ function downloadFile(content, fileName, type) {
 
   URL.revokeObjectURL(url);
 }
+});
+
