@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let logs = JSON.parse(localStorage.getItem("logs")) || [];
 
-  // ==========================
-  // FICHAJE
-  // ==========================
+  // ---------- FICHAJE ----------
   button.addEventListener("click", () => {
     const now = new Date();
     const date = now.toISOString().split("T")[0];
@@ -39,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isEntry = !isEntry;
   });
 
-  // ==========================
-  // MODO ADMIN
-  // ==========================
+  // ---------- ADMIN ----------
   adminAccess.addEventListener("click", () => {
     const pass = prompt("Clave de administrador:");
 
@@ -53,9 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ==========================
-  // HISTORIAL
-  // ==========================
   function renderHistory() {
     historyDiv.innerHTML = "";
     logs.forEach(log => {
@@ -65,9 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // EXPORTACIONES
-  // ==========================
+  // ---------- EXPORT CSV ----------
   exportCSVBtn.addEventListener("click", () => {
     let csv = "Usuario,Cargo,Tipo,Fecha,Hora\n";
     logs.forEach(log => {
@@ -76,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     downloadFile(csv, "historial_fichaje.csv", "text/csv");
   });
 
+  // ---------- EXPORT EXCEL ----------
   exportExcelBtn.addEventListener("click", () => {
     let csv = "Usuario,Cargo,Tipo,Fecha,Hora\n";
     logs.forEach(log => {
