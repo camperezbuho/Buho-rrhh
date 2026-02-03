@@ -44,7 +44,19 @@ button.addEventListener("click", () => {
 // ==========================
 // MODO ADMIN
 // ==========================
-adminAccess.addEventListener("click", () => {
+if (adminAccess) {
+  adminAccess.addEventListener("click", () => {
+    const pass = prompt("Clave de administrador:");
+
+    if (pass === ADMIN_PASSWORD) {
+      adminPanel.classList.remove("hidden");
+      renderHistory();
+    } else {
+      alert("Clave incorrecta");
+    }
+  });
+}
+
   const pass = prompt("Clave de administrador:");
 
   if (pass === ADMIN_PASSWORD) {
@@ -109,4 +121,5 @@ function downloadFile(content, fileName, type) {
   URL.revokeObjectURL(url);
 }
 });
+
 
