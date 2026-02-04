@@ -2,16 +2,27 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 body {
   margin: 0;
   background-color: #2f343b;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
+
+/* Home centrada */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Calendario */
+.calendar-page {
+  background-color: #2f343b;
+  color: white;
+  padding: 20px;
+}
+
 
 .app {
   text-align: center;
@@ -197,5 +208,6 @@ h1 {
 .dot.pending {
   background: #f2c94c;
 }
+
 
 
