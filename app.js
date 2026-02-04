@@ -1,37 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // -------- ELEMENTOS --------
   const button = document.getElementById("clockButton");
   const status = document.getElementById("status");
 
   const adminAccess = document.getElementById("adminAccess");
   const adminPanel = document.getElementById("adminPanel");
   const historyDiv = document.getElementById("history");
-exportCSVBtn.addEventListener("click", () => {
-  let csv = "Usuario,Cargo,Tipo,Fecha,Hora\n";
-
-  logs.forEach(log => {
-    csv += `${log.user},${log.role},${log.type},${log.date},${log.time}\n`;
-  });
-
-  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-  const url = URL.createObjectURL(blob);
-
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "historial_fichaje.csv";
-  a.click();
-
-  URL.revokeObjectURL(url);
-});
-
   const exportCSVBtn = document.getElementById("exportCSV");
 
+  // -------- CONFIG --------
   const ADMIN_PASSWORD = "buhoadmin";
   let isEntry = true;
 
   let logs = JSON.parse(localStorage.getItem("logs")) || [];
 
-  // ---------- FICHAJE ----------
+  // -------- FICHAJE --------
   button.addEventListener("click", () => {
     const now = new Date();
     const date = now.toISOString().split("T")[0];
@@ -53,7 +37,7 @@ exportCSVBtn.addEventListener("click", () => {
     isEntry = !isEntry;
   });
 
-  // ---------- ADMIN ----------
+  // -------- ADMIN --------
   adminAccess.addEventListener("click", () => {
     const pass = prompt("Clave de administrador:");
 
@@ -74,33 +58,23 @@ exportCSVBtn.addEventListener("click", () => {
     });
   }
 
-  // ---------- EXPORT CSV ----------
+  // -------- EXPORT CSV --------
   exportCSVBtn.addEventListener("click", () => {
     let csv = "Usuario,Cargo,Tipo,Fecha,Hora\n";
+
     logs.forEach(log => {
       csv += `${log.user},${log.role},${log.type},${log.date},${log.time}\n`;
     });
-    downloadFile(csv, "historial_fichaje.csv", "text/csv");
-  });
 
-  // ---------- EXPORT EXCEL ----------
-  exportExcelBtn.addEventListener("click", () => {
-    let csv = "Usuario,Cargo,Tipo,Fecha,Hora\n";
-    logs.forEach(log => {
-      csv += `${log.user},${log.role},${log.type},${log.date},${log.time}\n`;
-    });
-    downloadFile(csv, "historial_fichaje.xlsx", "application/vnd.ms-excel");
-  });
-
-  function downloadFile(content, fileName, type) {
-    const blob = new Blob([content], { type });
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
+
     const a = document.createElement("a");
     a.href = url;
-    a.download = fileName;
+    a.download = "historial_fichaje.csv";
     a.click();
+
     URL.revokeObjectURL(url);
-  }
+  });
 
 });
-
