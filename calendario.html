@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buho RRHH · Calendario</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <h1>📅 Calendario</h1>
+    <p class="user">Perez Camila · Office Manager</p>
+
+    <!-- SALDOS -->
+    <div class="balances">
+      <p>Vacaciones: <strong>4 / 10</strong></p>
+      <p>Mañanas libres: <strong>3 / 4</strong></p>
+      <p>Tardes libres: <strong>1 / 4</strong></p>
+      <p>Excepciones: <strong>1</strong></p>
+    </div>
+
+    <!-- BOTÓN NUEVA SOLICITUD -->
+    <button class="secondary-button">
+      + Nueva solicitud
+    </button>
+
+    <!-- CALENDARIO -->
+    <div class="calendar">
+
+      <div class="calendar-header">
+        <span>◀</span>
+        <strong>Septiembre 2026</strong>
+        <span>▶</span>
+      </div>
+
+      <div class="calendar-grid">
+        <div class="day-name">L</div>
+        <div class="day-name">M</div>
+        <div class="day-name">X</div>
+        <div class="day-name">J</div>
+        <div class="day-name">V</div>
+        <div class="day-name">S</div>
+        <div class="day-name">D</div>
+
+        <!-- DÍAS -->
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day vacation">1</div>
+        <div class="day vacation">2</div>
+        <div class="day ho">3</div>
+        <div class="day">4</div>
+        <div class="day">5</div>
+
+        <div class="day pending">6</div>
+        <div class="day pending">7</div>
+        <div class="day">8</div>
+        <div class="day">9</div>
+        <div class="day">10</div>
+        <div class="day">11</div>
+        <div class="day">12</div>
+      </div>
+    </div>
+
+    <!-- LEYENDA -->
+    <div class="legend">
+      <p><span class="dot vacation"></span> Vacaciones</p>
+      <p><span class="dot ho"></span> Home Office</p>
+      <p><span class="dot pending"></span> Pendiente</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
+ 
