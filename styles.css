@@ -208,6 +208,18 @@ h1 {
 .dot.pending {
   background: #f2c94c;
 }
+/* ===== FIX CALENDARIO ===== */
+.calendar-page {
+  min-height: 100vh;
+  display: block;
+}
+
+.calendar-page .app {
+  min-height: auto;
+  height: auto;
+  justify-content: flex-start;
+}
+
 
 
 
