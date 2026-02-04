@@ -104,6 +104,7 @@ h1 {
 .secondary-button {
   width: 100%;
   padding: 14px;
+  margin-top: 8px;        /* separación respecto al botón de arriba */
   margin-bottom: 20px;
   font-size: 16px;
   background-color: #2f343b;
@@ -196,4 +197,5 @@ h1 {
 .dot.pending {
   background: #f2c94c;
 }
+
 
