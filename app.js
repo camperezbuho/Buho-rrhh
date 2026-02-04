@@ -36,6 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     button.textContent = isEntry ? "SALIDA" : "ENTRADA";
     isEntry = !isEntry;
   });
+// ---------- IR AL CALENDARIO ----------
+if (calendarButton) {
+  calendarButton.addEventListener("click", () => {
+    window.location.href = "./calendario.html";
+  });
+}
 
   // -------- ADMIN --------
   adminAccess.addEventListener("click", () => {
@@ -78,3 +84,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
