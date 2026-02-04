@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const adminAccess = document.getElementById("adminAccess");
   const adminPanel = document.getElementById("adminPanel");
+  const calendarButton = document.getElementById("calendarButton");
+
+calendarButton.addEventListener("click", () => {
+  window.location.href = "calendario.html";
+});
+
   const historyDiv = document.getElementById("history");
   const exportCSVBtn = document.getElementById("exportCSV");
 
@@ -84,4 +90,5 @@ if (calendarButton) {
   });
 
 });
+
 
